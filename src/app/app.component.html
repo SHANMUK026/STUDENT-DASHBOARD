@@ -6,14 +6,17 @@
   <input type="text" [(ngModel)]="grade" placeholder="Enter your grade" /><br/><br/>
   <button (click)="addProfile()">Add Profile</button><br/>
 </div>
-<div *ngIf="students.length===0">
+<!-- <div *ngIf="students.length===0">
   <p>No students found</p>
-</div>
+</div> -->
 <div *ngIf="students.length>0">
   <li *ngFor="let student of students">
     {{student.name}} - {{student.grade}}
-      <span *ngIf="student.grade === 'A' || 'a' ">🟢 Excellent</span>
-      <span *ngIf="student.grade === 'B' || 'b' ">🟡 Good</span>
-      <span *ngIf="student.grade === 'C' || 'c' ">🔴 Needs Improvement</span>
+      <span *ngIf="student.grade === 'A' || student.grade === 'a' ">🟢 Excellent</span>
+      <span *ngIf="student.grade === 'B' || student.grade === 'b' ">🟡 Good</span>
+      <span *ngIf="student.grade === 'C' || student.grade === 'c' ">🔴 Needs Improvement</span>
   </li>
+  <div *ngIf="students.length===0">
+  <p>No students found</p>
+</div>
 </div>
